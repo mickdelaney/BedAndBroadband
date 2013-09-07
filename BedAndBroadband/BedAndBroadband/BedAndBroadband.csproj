@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Fix">
       <HintPath>..\packages\Fix.0.3.3.13\lib\net40\Fix.dll</HintPath>
     </Reference>
@@ -45,8 +51,9 @@
       <HintPath>..\packages\Fix.AspNet.0.3.3.13\lib\net40\Fix.AspNet.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
@@ -60,17 +67,24 @@
     <Reference Include="Simple.Data.SqlServer">
       <HintPath>..\packages\Simple.Data.SqlServer.0.18.3.1\lib\net40\Simple.Data.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Web">
-      <HintPath>..\packages\Simple.Web.0.8.0.51524\lib\net40\Simple.Web.dll</HintPath>
+    <Reference Include="Simple.Web, Version=0.9.1.50720, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Web.0.9.1.50720\lib\net40\Simple.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Web.AspNet">
-      <HintPath>..\packages\Simple.Web.AspNet.0.8.0.51524\lib\net40\Simple.Web.AspNet.dll</HintPath>
+    <Reference Include="Simple.Web.AspNet, Version=0.9.1.50720, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Web.AspNet.0.9.1.50720\lib\net40\Simple.Web.AspNet.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Web.JsonNet">
-      <HintPath>..\packages\Simple.Web.JsonNet.0.8.0.51524\lib\net40\Simple.Web.JsonNet.dll</HintPath>
+    <Reference Include="Simple.Web.JsonNet, Version=0.9.1.50720, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Web.JsonNet.0.9.1.50720\lib\net40\Simple.Web.JsonNet.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Web.Ninject">
-      <HintPath>..\packages\Simple.Web.NInject.0.8.0.51524\lib\net40\Simple.Web.Ninject.dll</HintPath>
+    <Reference Include="Simple.Web.Ninject, Version=0.9.1.50720, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Web.NInject.0.9.1.50720\lib\net40\Simple.Web.Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Web.Windsor">
+      <HintPath>..\Simple.Web.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -94,12 +108,16 @@
     <Content Include="App\Controllers\RateHotelController.js">
       <DependentUpon>RateHotelController.ts</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\font\fontawesome-webfont.woff" />
     <Content Include="Content\font\fontawesome-webfont.ttf" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\FontAwesome.otf" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <TypeScriptCompile Include="App\app.ts" />
     <Content Include="App\app.js">
       <DependentUpon>app.ts</DependentUpon>
@@ -128,16 +146,10 @@
     <Content Include="App\_project.js">
       <DependentUpon>_project.ts</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome-ie7.css" />
     <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Html\base.html" />
     <Content Include="Html\home.html" />
@@ -449,9 +461,13 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui.d.ts" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\typings\angular-ui\angular-ui.d.js">
       <DependentUpon>angular-ui.d.ts</DependentUpon>
     </Content>
@@ -462,20 +478,21 @@
     <Content Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
     <Content Include="Scripts\typings\angularjs\angular.d.ts" />
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />
-    <Content Include="Scripts\ui-bootstrap-0.4.0.js" />
-    <Content Include="Scripts\ui-bootstrap-0.4.0.min.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls-0.4.0.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls-0.4.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-0.5.0.js" />
+    <Content Include="Scripts\ui-bootstrap-0.5.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.5.0.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.5.0.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup\Class1.cs" />
+    <Compile Include="Startup\WindsorStartup.cs" />
+    <Compile Include="Startup\NinjectStartup.cs" />
     <Compile Include="Startup\Statics.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

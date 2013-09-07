@@ -1,3 +1,4 @@
+/// <reference path="../_project.ts"/>
 var Links;
 (function (Links) {
     function get(resource, rel) {
@@ -8,11 +9,13 @@ var Links;
     }
     Links.get = get;
 })(Links || (Links = {}));
+/// <reference path="../_project.ts"/>
 var BaseController = (function () {
     function BaseController() {
     }
     return BaseController;
 })();
+/// <reference path="../_project.ts"/>
 var HomeController = (function () {
     function HomeController($scope, hotelService, $state) {
         this.$scope = $scope;
@@ -27,6 +30,7 @@ var HomeController = (function () {
     };
     return HomeController;
 })();
+/// <reference path="../_project.ts"/>
 var HotelController = (function () {
     function HotelController($scope, $state, hotelService) {
         this.$scope = $scope;
@@ -41,6 +45,7 @@ var HotelController = (function () {
     };
     return HotelController;
 })();
+/// <reference path="../_project.ts"/>
 var RateDialogController = (function () {
     function RateDialogController($scope, hotelService, dialog, hotel) {
         $scope.hotel = hotel;
@@ -74,6 +79,7 @@ var RateHotelController = (function () {
     }
     return RateHotelController;
 })();
+/// <reference path="../_project.ts"/>
 var services = angular.module("bandb.services", []);
 
 var HotelService = (function () {
@@ -117,7 +123,8 @@ var HotelService = (function () {
 })();
 
 services.service("hotelService", HotelService);
-var app = angular.module("bandb", ["bandb.services", "ui.state", "ui.bootstrap"]);
+/// <reference path="_project.ts"/>
+var app = angular.module("bandb", ["bandb.services", "ui.router", "ui.state", "ui.bootstrap"]);
 
 app.config(function ($stateProvider) {
     $stateProvider.state("base", {
@@ -139,4 +146,8 @@ app.config(function ($stateProvider) {
         url: "/rate",
         controller: RateHotelController
     });
+});
+
+app.run(function ($state) {
+    $state.transitionTo('base.home');
 });

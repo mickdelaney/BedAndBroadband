@@ -15,11 +15,11 @@ declare module ng.ui {
         controller: string;
         template?: string;
         templateUrl?: string;
-        backdrop?: bool;
-        keyboard?: bool;
-        backdropClick?: bool;
-        dialogFade?: bool;
-        backdropFade?: bool;
+        backdrop?: boolean;
+        keyboard?: boolean;
+        backdropClick?: boolean;
+        dialogFade?: boolean;
+        backdropFade?: boolean;
         resolve?: any;
     }
 
@@ -35,7 +35,7 @@ declare module ng.ui {
     }
 
     interface IDialog {
-        open(): ng.IPromise;
+        open(): ng.IPromise<any>;
         close(result: any): void;
     }
 
@@ -49,7 +49,7 @@ declare module ng.ui {
         resolve?: any;
         params?: any[];
         views?: any;
-        abstract?: bool;
+        abstract?: boolean;
         onEnter?: Function;
         onExit?: Function;
         data?: any;
@@ -61,13 +61,13 @@ declare module ng.ui {
 
     interface IState {
         params: any;
-        transitionTo(state: string, params?: any, updateLocation?: bool): void;
-        transitionTo(state: IStateConfig, params?: any, updateLocation?: bool): void;
+        transitionTo(state: string, params?: any, updateLocation?: boolean): void;
+        transitionTo(state: IStateConfig, params?: any, updateLocation?: boolean): void;
         href(state: IStateConfig, params?: any): string;
         href(stateName: string, params?: any): string;
-        includes(partialStateName: string): bool;
-        is(stateName: string): bool;
-        is(state: IStateConfig): bool;
+        includes(partialStateName: string): boolean;
+        is(stateName: string): boolean;
+        is(state: IStateConfig): boolean;
         current: IStateConfig;
     }
 

@@ -33,8 +33,9 @@
     <Reference Include="Simple.Data">
       <HintPath>..\packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Web">
-      <HintPath>..\packages\Simple.Web.0.8.0.51524\lib\net40\Simple.Web.dll</HintPath>
+    <Reference Include="Simple.Web, Version=0.9.1.50720, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Simple.Web.0.9.1.50720\lib\net40\Simple.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

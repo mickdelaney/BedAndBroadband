@@ -1,6 +1,6 @@
 /// <reference path="_project.ts"/>
 
-var app = angular.module("bandb", ["bandb.services", "ui.state", "ui.bootstrap"]);
+var app = angular.module("bandb", ["bandb.services", "ui.router", "ui.state", "ui.bootstrap"]);
 
 app.config(($stateProvider: ng.ui.IStateProvider) => {
     $stateProvider.state("base", {
@@ -23,4 +23,8 @@ app.config(($stateProvider: ng.ui.IStateProvider) => {
         controller: RateHotelController
     });
 
+});
+
+app.run(($state: any) => {
+    $state.transitionTo('base.home');
 });
